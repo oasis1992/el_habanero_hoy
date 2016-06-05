@@ -22,6 +22,31 @@ Route::get('/mapa', [
     'as'    =>  'map'
 ]);
 
+Route::group(['prefix' => 'api'], function() {
+
+    Route::get('/latitude/{lat}/longitude/{long}/now/{all?}', [
+       'uses' => 'WebController@getByLocation',
+        'as' => 'get_by_location'
+    ]);
+/*
+    Route::get('/', [
+        'uses' => '',
+        'as' => ''
+    ]);
+
+    Route::get('/', [
+        'uses' => '',
+        'as' => ''
+    ]);
+
+    Route::get('/', [
+        'uses' => '',
+        'as' => ''
+    ]);
+*/
+
+});
+
 
 
 

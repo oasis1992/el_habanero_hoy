@@ -14,25 +14,43 @@ class AddDataController extends Controller
 {
     public function setInfo()
     {
+        $data_location = array();
+
+        $data_location[0] = array( 'name' => 'Yucatán','lat'=>20.809068,'lon'=>-89.049861);
+        $data_location[1] = array( 'name' =>'Distrito Federal','lat' => 19.389224, 'lon' =>  -99.136798);
+        $data_location[2] = array( 'name' => 'Veracruz','lat' => 19.179898, 'lon' => -96.146466);
+        $data_location[3] = array( 'name' => 'Oaxaca','lat' => 16.960807, 'lon' => -96.699842);
+        $data_location[4] = array( 'name' => 'Tamaulipas','lat' => 24.9262332, 'lon' => -100.8892395);
+        $data_location[5] = array( 'name' => 'Tabasco','lat' => 18.4379224, 'lon' => -92.3948247);
+        $data_location[6] = array( 'name' => 'Nuevo León','lat' =>  25.4638346, 'lon' => -102.0587768);
+        $data_location[7] = array( 'name' => 'Jalisco','lat' => 20.8285822, 'lon' => -105.8473639);
+        $data_location[8] = array( 'name' => 'Puebla','lat' => 18.4062289, 'lon' => -98.052264);
+        $data_location[9] = array( 'name' => 'Quintana Roo','lat' => 19.7268228, 'lon' => -90.2484308);
+        $data_location[10] = array( 'name' => 'Campeche','lat' => 19.062597, 'lon' => -90.180422);
+
+
+
+
+
+
         $this->initParse();
         $array = array();
         $array[0] =  "Fecha|Presentación|Origen|Destino|Precio Mín|Precio Max|Precio Frec|Obs.";
-        $array[1] = array(0 =>  "Fecha|Presentación|Origen|Destino|Precio Mín|Precio Max|Precio Frec|Obs.",
-            1 => '03/06/2016|Kilogramo|Campeche|Campeche: Mercado "Pedro Sáinz de Baranda", Campeche|35.00|40.00|40.00',
+        $array[1] = array(
+            0 => "03/06/2016|Kilogramo|Campeche|Campeche: Mercado 'Pedro Sáinz de Baranda' Campeche|35.00|40.00|40.00",
+         1 => "03/06/2016|Kilogramo|Jalisco|Nayarit: Mercado de abasto 'Adolfo López Mateos' de Tepic|39.00|54.00|52.00",
          2 => "03/06/2016|Kilogramo|Jalisco|Nayarit: Mercado de abasto 'Adolfo López Mateos' de Tepic|39.00|54.00|52.00",
-         3 => "03/06/2016|Kilogramo|Jalisco|Nayarit: Mercado de abasto 'Adolfo López Mateos' de Tepic|39.00|54.00|52.00",
-         4 => "03/06/2016|Kilogramo|Tamaulipas|Nuevo León: Mercado de Abasto 'Estrella' de San Nicolás de los Garza|50.00|60.00|50.00",
-         5 =>  "03/06/2016|Kilogramo|Distrito Federal|Oaxaca: Módulo de Abasto de Oaxaca|40.00|44.00|42.00",
-         6 => "03/06/2016|Kilogramo|Quintana Roo|Quintana Roo: Mercado de Chetumal, Quintana Roo|95.00|95.00|95.00",
-         7 =>  "03/06/2016|Kilogramo|Tabasco|Tabasco: Central de Abasto de Villahermosa|50.00|60.00|50.00",
-         8 => "03/06/2016|Kilogramo|Puebla|Tamaulipas: Módulo de Abasto de Tampico, Madero y Altamira|50.00|60.00|60.00",
-         9 => "03/06/2016|Kilogramo|Veracruz|Veracruz: Central de Abasto de Jalapa|42.00|43.00|43.00",
-         10 => "03/06/2016|Kilogramo|Veracruz|Veracruz: Central de Abasto de Minatitlán|50.00|55.00|55.00",
-          11 => "03/06/2016|Kilogramo|Veracruz|Veracruz: Mercado Malibrán|60.00|65.00|65.00",
-    12 => "03/06/2016|Kilogramo|Yucatán|Yucatán: Central de Abasto de Mérida|40.00|60.00|50.00",
-    13 => "03/06/2016|Caja de 10 kg.|Yucatán|Yucatán: Mercado 'Casa del Pueblo'|600.00|600.00|600.00" );
+         3 => "03/06/2016|Kilogramo|Tamaulipas|Nuevo León: Mercado de Abasto 'Estrella' de San Nicolás de los Garza|50.00|60.00|50.00",
+         4 =>  "03/06/2016|Kilogramo|Distrito Federal|Oaxaca: Módulo de Abasto de Oaxaca|40.00|44.00|42.00",
+         5 => "03/06/2016|Kilogramo|Quintana Roo|Quintana Roo: Mercado de Chetumal, Quintana Roo|95.00|95.00|95.00",
+         6 =>  "03/06/2016|Kilogramo|Tabasco|Tabasco: Central de Abasto de Villahermosa|50.00|60.00|50.00",
+         7 => "03/06/2016|Kilogramo|Puebla|Tamaulipas: Módulo de Abasto de Tampico, Madero y Altamira|50.00|60.00|60.00",
+         8 => "03/06/2016|Kilogramo|Veracruz|Veracruz: Central de Abasto de Jalapa|42.00|43.00|43.00",
+         9 => "03/06/2016|Kilogramo|Veracruz|Veracruz: Central de Abasto de Minatitlán|50.00|55.00|55.00", 10 => "03/06/2016|Kilogramo|Veracruz|Veracruz: Mercado Malibrán|60.00|65.00|65.00",
+        11 => "03/06/2016|Kilogramo|Yucatán|Yucatán: Central de Abasto de Mérida|40.00|60.00|50.00",
+        12 => "03/06/2016|Caja de 10 kg.|Yucatán|Yucatán: Mercado 'Casa del Pueblo'|600.00|600.00|600.00" );
 
-        $this->createData($array);
+        $this->createData($array, $data_location);
     }
 
     private function initParse()
@@ -41,9 +59,9 @@ class AddDataController extends Controller
         ParseClient::setServerURL(env('URL_PARSE'));
     }
 
-    public function createData($arrayData)
+    public function createData($arrayData, $array_location)
     {
-        $object = ParseObject::create("registros");
+
         $headers = array();
         $headers[0] = "fecha";
         $headers[1] = "presentacion";
@@ -52,32 +70,74 @@ class AddDataController extends Controller
         $headers[4] = "precio_min";
         $headers[5] = "precio_max";
         $headers[6] = "precio_frec";
-        $headers[7] = "precio_obs";
-       //dd($arrayData);
+        $headers[7] = "precio_sucursal";
+        $headers[8] = "precio_obs";
 
-        for($i = 0 ; $i < count($headers)-1; $i++){
+        $size = count($arrayData[1]);
+        
+        for($i = 0 ; $i < $size; $i++){
+
+            $object = ParseObject::create("registros");
             $array_registro = explode('|', $arrayData[1][$i]);
+            $object->getObjectId();
 
-            for($j = 0; $j < count($array_registro); $j++){
-                $object->getObjectId();
-                if($headers[$i] == "fecha"){
-                    $object->setArray( "fecha", ["__type" => "Date", "iso" => $this->getProperDateFormat($array_registro[$i]) ]);
-                }else{
-                    $object->set($headers[$i], $array_registro[$i]);
+            $date = $this->change_order($array_registro[0]);
+            $object->set( "fecha", $this->getProperDateFormat($date));
+            $object->set("presentacion",$array_registro[1]);
+
+            $array_destino = explode(':', $array_registro[3]);
+            $destino_general = $array_destino[0];
+            $destino_especifico = $array_destino[1];
+            $bandera = false;
+            $bandera2 = false;
+            for($j = 0; $j < count($array_location); $j++){
+               // print($array_location[$j]['name']);
+                if(strcmp($array_location[$j]['name'], $array_registro[2])){
+                    $object->setArray('origen', array('nombre' =>  $array_registro[2], 'lat' => $array_location[$j]['lat'], 'lon' => $array_location[$j]['lon']));
+                  //  $object->set('destino_general', $destino_general);
+                    $object->set('destino_especifico', $destino_especifico);
+                    $bandera = true;
+                    break;
+                }
+                if($bandera){
+                    break;
                 }
             }
+
+
+            for($j = 0; $j < count($array_location); $j++){
+                if(strcmp($array_location[$j]['name'],$destino_general)){
+
+                    $object->setArray('destino', array('nombre' =>  $destino_general, 'lat' => $array_location[$j]['lat'], 'lon' => $array_location[$j]['lon']));
+                    $bandera2= true;
+                    break;
+                }
+                if($bandera2){
+                    break;
+                }
+            }
+
+            $object->set("precio_min",(double)$array_registro[4]);
+            $object->set("precio_max",(double)$array_registro[5]);
+            $object->set("precio_frec",(double)$array_registro[6]);
             $object->save();
         }
+        $object2 = ParseObject::create("sucursal");
+
+        $precio_waltmar = $this->waltmar();
+        $object2->set("precio_sucursal",(double)$precio_waltmar);
+        $object2->save();
     }
 
     function getProperDateFormat($value)
     {
-        date_default_timezone_set('UTC');
-        $value = date_create("2016-03-06");
-        $dateFormatString = 'Y-m-d H:i:s.u';
+        $date = new DateTime($value);
+        return $date;
+    }
 
-        $date = date_format($value, $dateFormatString);
-        $date = substr($date, 0, -3) . 'Z';
+    public function change_order($date){
+        $date = explode('/', $date);
+        $date = $date[2]."/".$date[1]."/".$date[0];
         return $date;
     }
 
@@ -129,6 +189,17 @@ class AddDataController extends Controller
         return $arrayData;
     }
 
+    public function getChileHabanero()
+    {
+        $query ='https://www.walmart.com.mx/super/verduras/chile-habanero-por-kilo-0000000003125/';
+        $homepage = file_get_contents($query);
+        // echo $homepage;
+        $results = get_string_between($homepage,'lblPrice', "</span>");
+        $results;
+        $precio = str_replace('" itemprop="price" class="price-prod&#32;">', "", $results);
+        return $precio;
+    }
+
     function getHeaders($array,$string){
         $resultado = str_replace($array[0], "", $string);
         $resultado2 = str_replace($array[1], "|", $resultado);
@@ -147,13 +218,16 @@ class AddDataController extends Controller
         return $final;
     }
 
+    public function waltmar()
+    {
+        $query ='https://www.walmart.com.mx/super/verduras/chile-habanero-por-kilo-0000000003125/';
+        $homepage = file_get_contents($query);
+        // echo $homepage;
+        $results = get_string_between($homepage,'lblPrice', "</span>");
+        $results;
+        $precio = str_replace('" itemprop="price" class="price-prod&#32;">', "", $results);
 
-    function get_string_between($string, $start, $end){
-        $string = ' ' . $string;
-        $ini = strpos($string, $start);
-        if ($ini == 0) return '';
-        $ini += strlen($start);
-        $len = strpos($string, $end, $ini) - $ini;
-        return substr($string, $ini, $len);
+        $precio = ltrim($precio, '$');
+        return $precio;
     }
 }
