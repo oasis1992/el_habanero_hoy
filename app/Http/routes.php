@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [
+    'uses'  =>  'AddDataController@setInfo',
+    'as'    =>  'set_info'
+]);
+
+Route::get('/mapa', [
+    'uses'  =>  'AddDataController@map',
+    'as'    =>  'map'
+]);
+
+
+
+
